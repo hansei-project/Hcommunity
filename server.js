@@ -25,7 +25,7 @@ app.disable("x-powered-by");
 
 app.use(require(join(__dirname + "/routes/router")));
 
-process.on('uncaughtException', function (err) {
+process.on('uncaughtException', (err) => {
 	console.log('uncaughtException 발생 : ' + err);
 });
 
