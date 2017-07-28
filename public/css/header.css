@@ -1,0 +1,16 @@
+body .navbar {
+  margin: 0 15px;
+  font-family: "Raleway", sans-serif;
+  border-radius: 0;
+  border-color: #3d8cf5;
+  background-color: #3d8cf5;
+}
+body .navbar-inverse .navbar-nav > a.active > a {
+  background-color: #3d8cf5;
+}
+body .navbar-inverse .navbar-nav > li > a {
+  color: #f2dede;
+}
+body .navbar-inverse li.active a {
+  background-color: #1976d2 !important;
+}

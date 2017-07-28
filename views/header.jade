@@ -1,0 +1,41 @@
+html
+	head
+		title Hcommunity
+		// JQUERY CDN
+		script(type="text/javascript", src="http://code.jquery.com/jquery-3.2.1.min.js")
+		
+		// Bootstrap CDN
+		link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css")
+		script(type="text/javascript", src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js")
+
+		// Semantic-UI CDN
+		link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.css")
+		script(type="text/javascript", src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js")
+		script(type="text/javascript", src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.js")
+
+		// Font
+		link(href='http://fonts.googleapis.com/css?family=Raleway', rel='stylesheet', type='text/css')
+
+		// Local CSS
+		link(rel="stylesheet", href="/css/header.css")
+	body
+		.row.nav1
+			nav#top-menu.navbar.navbar-inverse(role='navigation')
+				.container-fluid
+					// Brand and toggle get grouped for better mobile display
+					.navbar-header
+						button.navbar-toggle(type='button', data-target='#navbarCollapse', data-toggle='collapse')
+							span.sr-only Toggle navigation
+							span.icon-bar
+							span.icon-bar
+							span.icon-bar
+					// Collapse navigation
+					div.container
+						#navbarCollapse.collapse.navbar-collapse
+							ul.nav.navbar-nav
+								li.active
+									a(href='#') HOME
+								li
+									a(href='men.html') MEN
+
+		block content

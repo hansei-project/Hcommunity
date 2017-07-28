@@ -20,7 +20,8 @@ app.use(logger('{"remote_addr": ":remote-addr", "remote_user": ":remote-user", "
 
 app.use(bodyParser.json({limit: "50mb"}));
 app.use(bodyParser.urlencoded({limit: "50mb", extended: true}));
-app.use(express.static(join(__dirname + "/public")));
+app.use(require("stylus").middleware({src: __dirname + "/public"}));
+app.use(express.static(__dirname + "/public"));
 app.disable("x-powered-by");
 
 app.use(require(join(__dirname + "/routes/router")));

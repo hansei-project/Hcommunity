@@ -4,7 +4,7 @@ let Router = require("express").Router;
 let router = Router();
 
 router.get("/", (req, res) => {
-	res.send("<p>TEST!</p>");
+	res.render("index");
 });
 
 module.exports = router;
