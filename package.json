@@ -16,5 +16,15 @@
   "bugs": {
     "url": "https://github.com/hansei-project/Hcommunity/issues"
   },
-  "homepage": "https://github.com/hansei-project/Hcommunity#readme"
+  "homepage": "https://github.com/hansei-project/Hcommunity#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "hide-powered-by": "^1.0.0",
+    "jade": "^1.11.0",
+    "morgan": "^1.8.2",
+    "nodejs": "0.0.0",
+    "socket.io": "^2.0.3",
+    "stylus": "^0.54.5"
+  }
 }

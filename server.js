@@ -30,8 +30,8 @@ process.on('uncaughtException', (err) => {
 	console.log('uncaughtException 발생 : ' + err);
 });
 
-server.listen(80, () => {
-	console.log("SERVER PORT 80 LISTEN...!");
+server.listen(3000, () => {
+	console.log("SERVER PORT 3000 LISTEN...!");
 });
 
 module.exports = app;
