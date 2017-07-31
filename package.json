@@ -18,12 +18,14 @@
   },
   "homepage": "https://github.com/hansei-project/Hcommunity#readme",
   "dependencies": {
-        "express": "latest"
-      , "jade": "latest"
-      , "body-parser": "latest"
-      , "stylus": "latest"
-      , "socket.io": "latest"
-      , "hide-powered-by":"latest"
-      , "morgan": "latest"
+    "express": "latest",
+    "jade": "latest",
+    "body-parser": "latest",
+    "stylus": "latest",
+    "socket.io": "latest",
+    "hide-powered-by": "latest",
+    "morgan": "latest",
+    "request": "latest",
+    "xml-parser": "latest"
   }
 }
