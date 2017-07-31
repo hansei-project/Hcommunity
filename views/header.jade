@@ -1,0 +1,36 @@
+html
+	head
+		title Hcommunity
+		// JQUERY CDN
+		script(type="text/javascript", src="http://code.jquery.com/jquery-3.2.1.min.js")
+		
+		// Bootstrap CDN
+		link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css")
+		script(type="text/javascript", src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js")
+
+		// Font
+		link(href='http://fonts.googleapis.com/css?family=Raleway', rel='stylesheet', type='text/css')
+
+		// Local CSS
+		link(rel="stylesheet", href="/css/header.css")
+
+		block scripts
+	body
+		.row.nav1
+			nav#top-menu.navbar.navbar-inverse(role='navigation')
+				.container-fluid
+					.navbar-header
+						button.navbar-toggle(type='button', data-target='#navbarCollapse', data-toggle='collapse')
+							span.sr-only Toggle navigation
+							span.icon-bar
+							span.icon-bar
+							span.icon-bar
+					div.container
+						#navbarCollapse.collapse.navbar-collapse
+							ul.nav.navbar-nav
+								li.active
+									a(href='#') HOME
+								li
+									a(href='#') BOARD
+
+		block content

@@ -1,10 +1,10 @@
 "use strict";
-let Router = require("express").Router;
+const xmlparse = require("xml-parser");
 
-let router = Router();
+let index = async(req, res) => {
+	let model = req["app"]["get"]("model")["requestModel"];
+	let weather = xmlparse(await model.get("http://www.kma.go.kr/wid/queryDFSRSS.jsp?zone=1144056500"));
+	res.render("index", {weather: weather["root"]["children"][0]["children"][6]["children"][5]["children"][1]["children"][0]["children"]});
+}
 
-router.get("/", (req, res) => {
-	res.send("<p>TEST!</p>");
-});
-
-module.exports = router;
+module.exports.index = index;

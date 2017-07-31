@@ -1,17 +1,21 @@
 "use strict";
-let express = require("express");
-let logger = require("morgan");
-let hidePoweredBy = require("hide-powered-by");
-let bodyParser = require("body-parser");
-let createWriteStream = require("fs").createWriteStream;
-let join = require("path").join;
-let Server = require("http").Server;
-let SocketIO = require("socket.io");
+const express = require("express");
+const logger = require("morgan");
+const hidePoweredBy = require("hide-powered-by");
+const bodyParser = require("body-parser");
+const createWriteStream = require("fs").createWriteStream;
+const join = require("path").join;
+const Server = require("http").Server;
+const SocketIO = require("socket.io");
+const config = require("./config");
+const route_loader = require("./routes/route_loader");
+const model_loader = require("./model/model_loader");
 
 let app = express();
 let server = Server(app);
 
-app.set("views", __dirname + "/views/");
+
+app.set("views", join(__dirname + "/views/"));
 app.set("view engine", "jade");
 app.locals.pretty = true;
 
@@ -20,17 +24,19 @@ app.use(logger('{"remote_addr": ":remote-addr", "remote_user": ":remote-user", "
 
 app.use(bodyParser.json({limit: "50mb"}));
 app.use(bodyParser.urlencoded({limit: "50mb", extended: true}));
+app.use(require("stylus").middleware({src: join(__dirname + "/public")}));
 app.use(express.static(join(__dirname + "/public")));
 app.disable("x-powered-by");
 
-app.use(require(join(__dirname + "/routes/router")));
+route_loader(app);
+model_loader(app);
 
 process.on('uncaughtException', (err) => {
 	console.log('uncaughtException 발생 : ' + err);
 });
 
-server.listen(process.env.PORT || 3000, () => {
-	console.log("SERVER PORT 80 LISTEN...!");
+server.listen(config["server_port"], () => {
+	console.log(`SERVER PORT ${config['server_port']} LISTEN...!`);
 });
 
 module.exports = app;

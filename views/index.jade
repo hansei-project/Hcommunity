@@ -1,0 +1,22 @@
+extends header
+
+block scripts
+	link(rel="stylesheet", href="/weather/css/weather-icons.min.css")
+	link(rel="stylesheet", href="/weather/css/weather-icons-wind.min.css")
+	link(rel="stylesheet", href="/css/index.css")
+
+block content
+	div.container
+		div.row
+			div.col-md-2.weather
+				h2.text-center 오늘의 날씨
+					small (마포구)
+				if weather[8]["content"] === "Rain"
+					i.wi.wi-day-rain.text-center
+				else if weather[8]["content"] === "Cloudy"
+					i.wi.wi-day-cloudy.text-center
+				else if weather[8]["content"] === "Sunny"
+					i.wi.wi-day-sunny.text-center
+				span #{weather[2]["content"]} ºC
+			div.col-md-5.col-md-offset-1.chat
+			div.col-md-3.col-md-offset-1.login
